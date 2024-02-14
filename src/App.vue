@@ -1,38 +1,30 @@
 <template>
-  <div class="main">
-    <div class="container">
-      <BarChart />
-    </div>
-    <div class="container">
-      <DoughnutChart />
-    </div>
-    <div class="container">
-      <PieChart />
-    </div>
-    <div class="container">
-      <LineChart />
-    </div>
+  <div class="common-layout">
+    <el-container>
+      <el-header>Header</el-header>
+      <el-main>
+        <el-button>Hello button</el-button>
+        <main-page />
+      </el-main>
+    </el-container>
   </div>
 </template>
 
 <script lang="ts">
-import BarChart from './components/BarChart/BarChart.vue'
-import DoughnutChart from './components/DoughnutChart/DoughnutChart.vue'
-import PieChart from './components/PieChart/PieChart.vue'
-import LineChart from './components/LineChart/LineChart.vue'
-
+import MainPage from './pages/MainPage.vue';
 
 export default {
   name: 'App',
   components: {
-    BarChart,
-    DoughnutChart,
-    PieChart,
-    LineChart
+    MainPage
   },
 };
 </script>
 <style>
+.common-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .main {
   display: flex;
   align-items: center;
@@ -40,6 +32,7 @@ export default {
   flex-direction: column;
   gap: 60px;
 }
+
 .container {
   display: flex;
   width: 400px;
